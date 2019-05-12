@@ -7,7 +7,7 @@ namespace School
 {
  namespace Subject
   {
-     public class DX21 : BeginSubject
+     public class AT11 : BeginSubject
      {
       void Start()
       {

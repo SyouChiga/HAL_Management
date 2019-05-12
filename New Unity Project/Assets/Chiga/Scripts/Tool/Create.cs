@@ -11,27 +11,29 @@ public class SubjectFactory : MonoBehaviour
         local_Script.Add("using System.Collections;");
         local_Script.Add("using System.Collections.Generic;");
         local_Script.Add("using UnityEngine;");
+        local_Script.Add("");
+        local_Script.Add("");
 
         local_Script.Add("namespace School");
         local_Script.Add("{");
 
         local_Script.Add(" namespace Subject");
-        local_Script.Add(" {");
-
-        local_Script.Add("  public class " + name + " : BeginSubject");
         local_Script.Add("  {");
 
-        local_Script.Add("   void Start()");
-        local_Script.Add("   {");
+        local_Script.Add("     public class " + name + " : BeginSubject");
+        local_Script.Add("     {");
+
+        local_Script.Add("      void Start()");
+        local_Script.Add("      {");
+        local_Script.Add("      }");
+
+        local_Script.Add("      void Update()");
+        local_Script.Add("      {");
+        local_Script.Add("      }");
+
+        local_Script.Add("     }");
+
         local_Script.Add("   }");
-
-        local_Script.Add("   void Update()");
-        local_Script.Add("   {");
-        local_Script.Add("   }");
-
-        local_Script.Add("  }");
-
-        local_Script.Add(" }");
 
         local_Script.Add("}");
 
