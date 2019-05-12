@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace School
 {
-    public class Subject : MonoBehaviour
+    public class BeginSubject : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

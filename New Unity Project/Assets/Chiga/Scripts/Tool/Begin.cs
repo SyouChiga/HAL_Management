@@ -21,10 +21,11 @@ namespace Tool
 
         }
         //@Toolを生成
-        protected static void ToolCreate(string name)
+      
+        protected static void ToolCreate(string name) 
         {
             // 生成
-            GetWindow<Subject>(name);
+            GetWindow<SubjectWindow>(name);
         }
         //@Main関数
         protected void ToolMain()

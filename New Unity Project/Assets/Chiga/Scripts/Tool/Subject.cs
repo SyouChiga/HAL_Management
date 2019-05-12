@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.IO;
 
 #if UNITY_EDITOR
 using UnityEditor;
 
 namespace Tool
 {
-    public class Subject : Begin
+    public class SubjectWindow : Begin
     {
+        //科目名
+        private string subjectName_;
         // Start is called before the first frame update
         void Start()
         {
@@ -37,14 +40,24 @@ namespace Tool
 
         protected override void ToolUpdate()
         {
-
+            //テキストフィールドの設定
+            subjectName_ = GUILayout.TextField(subjectName_);
+            if (GUILayout.Button("作成"))
+            {
+                List<string> local_string = SubjectFactory.Script(subjectName_);
+                StreamWriter textfile = new StreamWriter("Assets/Chiga/Scripts/School/" + subjectName_ + ".cs", false);// TextData.txtというファイルを新規で用意
+                foreach(var for_name in local_string)
+                {
+                    textfile.WriteLine(for_name);// ファイルに書き出したあと改行
+                }
+                textfile.Flush();// StreamWriterのバッファに書き出し残しがないか確認
+                textfile.Close();// ファイルを閉じる
+            }
         }
         protected override void ToolDraw()
         {
 
         }
-
-
 
     }
 }
